@@ -1,0 +1,260 @@
+<app-side-menu></app-side-menu>
+<div class="common_div">
+  <!-- <mat-card class="example-card" *ngFor="let i of userdata">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-title>{{i.name}}</mat-card-title>
+      <p>
+      <b>Email : </b>  {{i.email}}
+      </p>
+      <p>
+        <b>Mobile : </b>  {{i.mobile}}
+      </p>
+      <p>
+        <b>Password : </b>  {{i.password}}
+      </p>
+      <p>
+        <b>Address : </b>  {{i.address}}
+      </p>
+      <p>
+        <b>Last Update : </b> {{value}}
+      </p>
+    </mat-card-content>
+  </mat-card> -->
+  <mat-card class="example-card common_cardui">
+    <div class="row">
+      <div class="col-sm-5">
+        <p class="for_para"><b>Total Records - {{total}}</b></p>
+      </div>
+      <div class="col-sm-6">
+
+      </div>
+      <div class="col-sm-1">
+        <span><button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="create()"
+            matTooltip="Add new">
+            <mat-icon>add_circle</mat-icon>
+          </button></span>
+      </div>
+    </div>
+    <mat-card style="background-color: #a8b2c5;"> <img *ngIf="loading" class="for_loader" src="../../assets/2.gif" /> </mat-card>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Sl no</th>
+          <th scope="col">Id</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Address</th>
+          <th scope="col">Profile Pic</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of profile | paginate : {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };let p = index;">
+          <th scope="row">{{p+1}}</th>
+          <th>{{i._id}}</th>
+          <td>{{i.s_name}}</td>
+          <td>{{i.l_name}}</td>
+          <td>{{i.mobile}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.password}}</td>
+          <td>{{i.add_one}} {{i.add_two}} {{i.city}} {{i.state}} {{i.pin}}</td>
+          <td>
+            <img src="{{i.profile_pic}}" class="profile"> 
+          </td>
+          <td style="display: flex;"><button mat-button mat-raised-button color="primary" style="margin: 2px;"
+              (click)="addupdate(i,'view')" matTooltip="Save">
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+            <button mat-button mat-raised-button color="accent" style="margin: 2px;" (click)="addupdate(i,'edit')"
+              matTooltip="Update">
+              <mat-icon>create</mat-icon>
+            </button>
+            <button mat-button mat-raised-button color="warn" style="margin: 2px;" (click)="remove(i._id)"
+              matTooltip="Delete">
+              <mat-icon>delete</mat-icon>
+            </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+  <mat-card class="example-card common_cardui">
+    <div class="d-flex justify-content-center">
+      <pagination-controls responsive="true" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </mat-card>
+  <!-- <app-footer></app-footer> -->
+  <mat-card class="example-card main_card" *ngIf="forCreate || isUpdate||isView">
+    <mat-card class="example-card caed_head">
+      <p class="card_para">This is For {{title}}</p>
+    </mat-card>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+
+          <mat-label><span class="icon">
+              <mat-icon>account_circle</mat-icon>
+              <span>{{ sinup_data.s_name }}</span>
+            </span><span class="sp">Enter your First name *</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.s_name" placeholder="Ex. Susanta" required [disabled]="isView">
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            First name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>account_circle</mat-icon>
+            </span><span class="sp">Enter your Last Name *</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.l_name" placeholder="Ex. Mandal" required [disabled]="isView">
+          <mat-error *ngIf="lastnameFormControl.hasError('required')">
+            Last name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>email</mat-icon>
+            </span><span class="sp">Enter your Email*</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.email" placeholder="Ex. pat@example.com" required [disabled]="isView">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>call</mat-icon>
+            </span><span class="sp">Enter your Mobile No*</span></mat-label>
+          <input type="tel" [(ngModel)]="sinup_data.mobile" pattern="^\d{10}$" matInput maxlength="10"
+            placeholder="Ex. 9679337134" required [disabled]="isView">
+          <mat-error *ngIf="phoneFormControl.hasError('required')">
+            Mobile No is <strong>required enter valid phone </strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>password</mat-icon>
+            </span>
+            <span class="sp">Your Password *</span>
+          </mat-label>
+          <input type="text" [(ngModel)]="sinup_data.password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" matInput maxlength="12"
+            placeholder="Ex. Susanta@123 max-12 charater" required [disabled]="isView">
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required enter valid Password </strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>home</mat-icon>
+            </span><span class="sp">Enter your Address one*</span></mat-label>
+          <textarea matInput [(ngModel)]="sinup_data.add_one" placeholder="Ex. New Town" required
+            [disabled]="isView"></textarea>
+          <mat-error *ngIf="addoneFormControl.hasError('required')">
+            Address 1 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>home</mat-icon>
+            </span><span class="sp">Enter your Address two*</span></mat-label>
+          <textarea matInput [(ngModel)]="sinup_data.add_two" placeholder="Ex. 100 Main rode" required
+            [disabled]="isView"></textarea>
+          <mat-error *ngIf="addtwoFormControl.hasError('required')">
+            Address 2 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>location_city</mat-icon>
+            </span><span class="sp">Enter your City*</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.city" placeholder="Ex. Kolkata" required [disabled]="isView">
+          <mat-error *ngIf="cityFormControl.hasError('required')">
+            City is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>domain</mat-icon>
+            </span><span class="sp">Enter your State*</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.state" placeholder="Ex. West Bengal" required [disabled]="isView">
+          <mat-error *ngIf="stateFormControl.hasError('required')">
+            State is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>add_location</mat-icon>
+            </span><span class="sp">Enter your Postal Code*</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.pin" #postalCode maxlength="6" placeholder="Ex. 941065" value="940413"
+            required [disabled]="isView">
+          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+          <mat-error *ngIf="pinFormControl.hasError('required')">
+            Pin is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+          <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" class="profile_one"> <br/>
+      </div>
+      <div class="col-sm-3" [hidden]="isView">    
+          <button mat-raised-button tabindex="-1" type="button" color="warn" class="ad_one">  <input  type='file' (change)="onSelectFile($event)" accept=".png, .jpg, .jpeg"></button>
+      </div>
+    </div>
+    <mat-card class="example-card caed_head_one">
+      <button mat-button mat-raised-button color="primary" style="margin: 5px;" (click)="update(sinup_data.id)"
+        [hidden]="isView || forCreate">
+        <mat-icon>send</mat-icon> Update
+      </button>
+      <button mat-button mat-raised-button color="accent" (click)="backFor()">
+        <mat-icon>skip_previous</mat-icon> Back
+      </button>
+      <button mat-button mat-raised-button color="primary" style="margin: 5px;" (click)="save()"
+        [hidden]="isView || isUpdate">
+        <mat-icon>send</mat-icon> Save
+      </button>
+    </mat-card>
+
+  </mat-card>
+  <mat-card class="example-card common_cardui">
+    <app-footer></app-footer>
+  </mat-card>
+</div>

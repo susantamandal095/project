@@ -1,0 +1,224 @@
+.example-spacer {
+  flex: 1 1 auto;
+  
+  
+}  
+span{
+  padding-right: 1rem;
+   
+   text-emphasis-color: coral;
+}
+
+.card{
+background-color: #29067c;
+color: white;
+padding: 20px;
+margin: 5px;
+width: 100%;
+}
+
+
+.example-card {
+max-width: 100%;
+}
+
+nav {
+position: sticky;
+top: -2px;
+z-index: 1;
+-webkit-backface-visibility: hidden;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+margin-bottom: 2px !important;
+}
+.navbar_color{
+background-color: #414764;
+z-index: 9999;
+position: fixed;
+width: 100%;
+}
+.mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+  background-color: #3f4464 !important;
+  color: #ffffff !important;
+}
+.nav_heading{
+color: aliceblue;
+  font-weight: bold;
+  font-size: 15px;
+}
+.bar_icon{
+background-color: aliceblue;
+  margin: 11px 0px;
+}
+.theme{
+top: 9px;
+  color: aliceblue;
+}
+.side-menu ::-webkit-scrollbar-thumb {
+  background: #570d74;
+}
+
+.side-menu ::-webkit-scrollbar-track {
+  background-color: #570d74;
+  background-clip: content-box;
+  background-clip: border-box;
+}
+
+.side-menu ::-webkit-scrollbar {
+  width: 12px;
+  background: #570d74;
+  border: 10px solid #b0b0b0;
+  background-color: #570d74;
+  border-radius: 5px;
+}
+.side-menu:hover,
+nav.side-menu.expanded {
+    width: 200px; //  overflow-x: hidden;
+    //  overflow-y: scroll;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.side-menu {
+   //  background: $primary-color;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 67px;
+    bottom: 0; // height: 100%;
+    left: 0;
+    width: 200px; // overflow-x: hidden;
+    // overflow-y: scroll;
+    -webkit-transition: width .05s linear;
+    transition: width .05s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.side-menu>ul {
+    // background: #570d74;
+    background: linear-gradient(150deg, black, transparent);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+    margin-top: 1px;
+}
+
+.side-menu>ul:hover {
+    overflow-y: scroll;
+}
+
+.side-menu li {
+    position: relative;
+    display: block;
+    width: 200px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.side-menu li>a {
+    position: relative;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 14px;
+    text-decoration: none;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    transition: 0.3s;
+    height: 44px;
+    border-bottom: 1px solid #f0f0f117;
+    width: 100%;
+    left: -20px;
+}
+
+.side-menu .nav-icon {
+    position: relative;
+    display: table-cell;
+    width: 200px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.side-menu .nav-text {
+    position: relative;
+    display: inline;
+    vertical-align: middle;
+    width: 190px;
+    font-family: 'Titillium Web', sans-serif;
+    // left: -8px;
+}
+
+.side-menu>ul.logout {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.side-menu ::-webkit-scrollbar-track {
+  background-color: #570d74;
+  border-radius: 0px;
+}
+
+.side-menu ::-webkit-scrollbar {
+  width: none;
+  background: #570d74;
+  border: 10px solid #b0b0b0;
+  background-color: #570d74;
+  border-radius: 5px;
+}
+.side-menu li:hover>a,
+nav.side-menu li.active>a,
+
+.side-menu ::-webkit-scrollbar {
+  width: none !important;
+}
+
+// .home_btn{
+//   margin-left: -35px;
+// }
+.home_btn_view{
+  display: none;
+}
+.menu-img {
+  position: relative;
+  // display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  top: 5px;
+  margin-right: 20px;
+  // margin-left: 20px;
+  // border-radius: 15px;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+}
+@media only screen and (max-width: 600px) {
+.bar_icon{
+  height: 32px;
+  width: 40px;
+}
+// .home_btn{
+//   display: none;
+// }
+.bar_span{
+  height: 23px;
+  width: 20px;
+  margin: 0px -4px;
+}
+.nav_heading{
+  font-size: 13px;
+}
+.home_btn_view{
+  display: block;
+}
+}

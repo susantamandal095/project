@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  
+  
+  .my_gride:hover .image {
+    opacity: 0.3;
+  }
+
+  .for_dath{
+    color: red;
+  }
+  .for_recover{
+    color: green;
+  }
+  .for_active{
+    color: #cddc39;
+  }
+  .for_confirm{
+color: #1678da;
+  }
+  .link_col{
+   color: aliceblue;
+  }
+  .update_btn{
+    margin: 20px 94px;
+  }
+  .spacal_grid{
+    margin: 10px 1px;
+  }
+  .common_for_all{
+margin-top: -300px !important;
+margin-left: 245px !important;
+  }
+  @media only screen and (max-width: 600px) {
+  .for_mobile_card{
+    height: auto !important;
+  }
+  .for_all_card{
+    margin: 10px 1px;
+  }
+}
+/* .........................................side nemu....................... */
+
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+.bg-light {
+  background-color: rgb(41, 57, 204) !important;
+  color: aliceblue;
+}
+#page-content-wrapper{background-color: lightblue;}
+/* ...........................end side.............. */
+.commone_toggle{
+  z-index: 101;
+    top: 7px;
+    left: 31px;
+}
+/* .common_div{
+  margin-top: -56px;
+} */
+.for_para{
+  color: blue;
+    font-size: 17px;
+    margin-left: 21px;
+}
+.for_loader{
+  margin-left: 525px;
+  /* background-color: black; */
+}
+.common_cardui {
+  top: 76px !important;
+}
+.mat-form-field {
+  margin-right: 8px;
+}
+.mat-snack-bar-container {
+  padding: 40px 16px !important;
+  height: 100px !important;
+  background-color: #ad3cc9 !important;
+  /* border-radius: 40% 10% 40% 10% !important; */
+}
+.cdk-overlay-container {
+  z-index: 999999999999 !important;
+}

@@ -1,0 +1,86 @@
+
+<!-- <button (click)="go()">test</button> -->
+<mat-card class="footer_img">
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card" *ngIf="isemp">
+			<div class="card-header">
+				<h3><input style="color: white;" type="submit" value="Click for Admin Sign In!!" (click)="admin()" class="btn"></h3>
+				<p style="color: white;">Welcome To Employees Sign In !!</p>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" matInput class="form-control" placeholder="username" [(ngModel)]="username" required name="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" matInput class="form-control" placeholder="password" [(ngModel)]="password" required name="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" (click)="goEmp()" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+				<b>	Don't have an account? </b> <a class="nav-link btn float-right reg_btn" routerLink="/sinup">Sign Up</a>
+				</div>
+			</div>
+		</div>
+		<div class="card" *ngIf="isadmin">
+			<div class="card-header">
+				<h3><input type="submit" style="color: white;" value="Click for Employees Sign In!!" (click)="emp()" class="btn"></h3>
+				<p style="color: white;">Welcome To Admin Sign In !!</p>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" matInput class="form-control" placeholder="username" [(ngModel)]="username" required name="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" matInput class="form-control" placeholder="password" [(ngModel)]="password" required name="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" (click)="go()" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<!-- <div class="card-footer">
+				<div class="d-flex justify-content-center links">
+				<b>	Don't have an account? </b> <a class="nav-link btn float-right reg_btn" routerLink="/sinup">Sign Up</a>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>
+</mat-card>

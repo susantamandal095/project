@@ -1,0 +1,387 @@
+<app-side-menu></app-side-menu>
+<div class="common_div">
+  <!-- <mat-card class="example-card common_cardui for_card_color new_clsop"> -->
+    <mat-card class="example-card new_clsop">
+    <div class="row">
+      <div class="col-sm-1">
+    <!-- <span><button mat-fab color="warn" aria-label="Example icon button with a home icon">
+      <mat-icon>home</mat-icon>
+    </button></span> -->
+    </div>
+    <div class="col-sm-8">
+   <!-- <a class="nav-link for_company" routerLink="/home"><span class="nav_heading"> <b><em> Welcome to {{companyname}} </em></b></span></a>  -->
+   </div>
+   <div class="col-sm-3">
+   <p class="for_times"> <b>Last Page Used Time Update :-  <em> {{last_reload_time}} </em> </b></p>
+   </div>
+  </div>
+  <!-- </mat-card>
+  <mat-card class="example-card new_clsop"> -->
+    <!-- <div class="example-card common_cardui"> -->
+       <!-- <div class="row">
+         <div class="col-sm-6"><b><em>Total Request : </em>  {{ total_request }}</b></div>
+         <div class="col-sm-6"><b><em>Total Developers included : </em> {{ total_developers_included }}</b></div>
+       </div>
+       <div class="row">
+        <div class="col-sm-6"><b><em>Total Developers support : </em> {{ total_developers_support }}</b></div>
+        <div class="col-sm-6"><b><em>Total Day's of Work : </em> {{ total_days_works }}</b></div>
+      </div> -->
+    <!-- </div> -->
+  </mat-card>
+  <mat-card class="example-card common_cardui new_cls nesscls">
+    <div class="row">
+    <div class="col-sm-3"><mat-card class="example-card dashbord_one">
+      <mat-card-content>
+        <p><b><em>Total No Of Employees :- {{total}}</em></b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions>
+        <a routerLink="/chart" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site  <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        <span class="for_user_icone"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card></div>
+    <div class="col-sm-3"><mat-card class="example-card dashbord_two">
+      <mat-card-content>
+        <p><b><em>Total No Of Admins :- {{total_adm}}</em></b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions>
+         <a routerLink="/admin" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site  <i class="fa fa-hand-o-right" aria-hidden="true"></i></a>
+        <span class="for_user_icone"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card></div>
+    <div class="col-sm-3"><mat-card class="example-card dashbord_three">
+      <mat-card-content>
+        <p><b><em>Total No Of Covid :- {{total_cov}}</em></b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions>
+        <a routerLink="/covid" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site  <i class="fa fa-hand-o-right" aria-hidden="true"></i></a>
+        <span class="for_user_icone"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card></div>
+    <div class="col-sm-3"><mat-card class="example-card dashbord_four">
+      <mat-card-content>
+        <p><b><em>Total No Of Covid In India :- {{total_cov2}}</em></b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <mat-card-actions>
+        <a routerLink="/covid-v2" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site  <i class="fa fa-hand-o-right" aria-hidden="true"></i></a>
+        <span class="for_user_icone"><i class="fa fa-medkit" aria-hidden="true"></i></span>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card></div>
+    
+    </div>
+  </mat-card>
+  <mat-card class="example-card common_cardui for_card_color">
+    <div class="row">
+    <div class="col-sm-4"><button mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon> pie_chart</mat-icon></button>  <b><em>Employees Activity</em></b></div>
+    <div class="col-sm-4"><button mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon> insert_chart</mat-icon></button>   <b><em>Employees Activity Yearly Records</em></b>  </div>
+  <div class="col-sm-4"></div>  
+  </div>
+  </mat-card>
+  <!-- <mat-card class="example-card common_cardui card_colore"> -->
+<div class="row">
+  <div class="col-sm-4">
+    <mat-card class="example-card common_cardui new_cls">
+<div class="chart-wrapper">
+    <canvas baseChart 
+    [data]="pieChartData" 
+    [labels]="pieChartLabels" 
+    [chartType]="pieChartType"
+    [options]="pieChartOptions"
+    [plugins]="pieChartPlugins"
+    [legend]="pieChartLegend">
+  </canvas>
+</div>
+</mat-card>
+</div>
+<div class="col-sm-4">
+  <mat-card class="example-card common_cardui new_cls">
+<div style="display: block;" >
+  <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>
+</mat-card>
+</div>
+<div class="col-sm-4">
+  <mat-card class="example-card common_cardui new_cls">
+    <div class="row">
+    <div class="col-sm-6"><mat-card class="example-card dashbord_oness">
+      <mat-card-content>
+        <p><b><em>Total Request : </em>  {{ total_request }}</b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <!-- <mat-card-actions>
+        <a routerLink="/chart" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site</a>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer> -->
+    </mat-card></div>
+    <div class="col-sm-6"><mat-card class="example-card dashbord_twoss">
+      <mat-card-content>
+        <p><b><em>Total Developers included : </em> {{ total_developers_included }}</b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <!-- <mat-card-actions>
+        <a routerLink="/admin" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site</a>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer> -->
+    </mat-card></div>    
+    </div>
+     <div class="row for_ui">
+    <div class="col-sm-6"><mat-card class="example-card dashbord_threess">
+      <mat-card-content>
+        <p><b><em>Total Developers support : </em> {{ total_developers_support }}</b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <!-- <mat-card-actions>
+        <a routerLink="/covid" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site</a>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer> -->
+    </mat-card></div>
+    <div class="col-sm-6"><mat-card class="example-card dashbord_fourss">
+      <mat-card-content>
+        <p><b><em>Total Day's of Work : </em> {{ total_days_works }}</b></p>
+      </mat-card-content>
+      <mat-divider inset></mat-divider>
+      <!-- <mat-card-actions>
+        <a routerLink="/covid-v2" class="btn  mr-2"><i class="fas fa-link"></i> Visit Site</a>
+      </mat-card-actions>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer> -->
+    </mat-card></div>
+    
+    </div>
+  </mat-card>
+</div>
+</div>
+<!-- </mat-card> -->
+<mat-card class="example-card common_cardui for_card_color">
+  <div class="row">
+  <div class="col-sm-4"><button mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon> pie_chart</mat-icon></button>  <b><em>Employees Rate</em></b></div>
+  <div class="col-sm-4"><button mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon> insert_chart</mat-icon></button>   <b><em>Employees Request</em></b>  </div>
+<div class="col-sm-4"><button mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon> insert_chart</mat-icon></button>   <b><em>Employees QC</em></b>  </div>  
+</div>
+</mat-card>
+<!-- <mat-card class="example-card common_cardui card_colore"> -->
+<div class="row">
+<div class="col-sm-4">
+  <mat-card class="example-card common_cardui new_cls">
+<div class="chart-wrapper">
+  <canvas baseChart 
+  [data]="pieChartDataone" 
+  [labels]="pieChartLabelsone" 
+  [chartType]="pieChartType"
+  [options]="pieChartOptions"
+  [plugins]="pieChartPlugins"
+  [legend]="pieChartLegend">
+</canvas>
+</div>
+</mat-card>
+</div>
+<div class="col-sm-4">
+<mat-card class="example-card common_cardui new_cls">
+<div style="display: block;" >
+<canvas baseChart 
+  [datasets]="barChartDatatwo"
+  [labels]="barChartLabelstwo"
+  [options]="barChartOptions"
+  [plugins]="barChartPlugins"
+  [legend]="barChartLegend"
+  [chartType]="barChartType">
+</canvas>
+</div>
+</mat-card>
+</div>
+<div class="col-sm-4">
+  <mat-card class="example-card common_cardui new_cls">
+  <div style="display: block;" >
+  <canvas baseChart 
+    [datasets]="barChartDataone"
+    [labels]="barChartLabelsone"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+  </div>
+  </mat-card>
+  </div>
+</div>
+<!-- </mat-card> -->
+<mat-card class="example-card common_cardui for_card_color">
+  <div class="row">
+  <div class="col-sm-6"><button mat-fab color="warn" aria-label="Example icon button with a home icon">	<mat-icon> score</mat-icon></button>  <b><em> QC of employees </em></b></div>
+  <div class="col-sm-6"><button mat-fab color="warn" aria-label="Example icon button with a home icon">	<mat-icon> score</mat-icon></button>  <b><em> Rate of employees </em></b></div>
+  </div>
+</mat-card>
+<!-- <mat-card class="example-card common_cardui card_coloress"> -->
+  <div class="row">
+  <div class="col-sm-6">
+    <mat-card class="example-card common_cardui new_cls">      
+  <div style="display: block;">
+    <canvas baseChart width="500" height="200"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+    </mat-card>
+  </div>
+  <div class="col-sm-6">
+    <mat-card class="example-card common_cardui new_cls">      
+  <div style="display: block;">
+    <canvas baseChart width="500" height="200"
+      [datasets]="lineChartDataone"
+      [labels]="lineChartLabelsone"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins">
+    </canvas>
+  </div>
+    </mat-card>
+  </div>
+  </div>
+  <!-- </mat-card> -->
+  <mat-card class="example-card common_cardui">
+    <div class="container-fluid bg-gradient p-5">
+      <div class="row m-auto text-center w-75" *ngFor="let allbugs of allbugss">
+        
+        <div class="col-4 princing-item red">
+          <div class="pricing-divider ">
+              <h3 class="text-light">TOTAL QC PENDING & %</h3>
+            <h4 class="my-0 display-4 text-light font-weight-normal mb-3"><span class="h3">#</span> {{allbugs.qc_pending}} & {{qc_pending_parsentage}} % <span class="h5">/mo</span></h4>
+             <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+          <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+          <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+          <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+        </svg>
+          </div>
+          <div class="card-body bg-white mt-0 shadow">
+            <ul class="list-unstyled mb-5 position-relative">
+              <li class="li_glid"><b>{{allbugs.qc_developers}} </b> Developers included</li>
+              <li class="li_glid"><b>{{qc_developers_parsentage}} % </b> Developers included %</li>
+              <li class="li_glid"><b>{{allbugs.qc_developers_days}} </b> Day's of Work</li>
+              <li class="li_glid"><b>{{qc_developers_days_parsentage}} % </b> Day's of Work %</li> 
+              <li class="li_glid"><b>{{allbugs.qc_support_developers}} </b> Developers support</li>
+              <li class="li_glid"><b>{{qc_support_developers_parsentage}} % </b> Developers support %</li>
+              <li class="li_glid"><b>{{allbugs.last_update_date}} </b> Last Updated</li>
+            </ul>
+            <a class="nav-link" routerLink="/bugs"><button type="button"  class="btn btn-lg btn-block  btn-custom ">More details</button> </a>
+          </div>
+        </div>
+       
+
+        
+        
+        <div class="col-4 princing-item blue">
+          <div class="pricing-divider ">
+              <h3 class="text-light">TOTAL PENDING REQUEST & %</h3>
+            <h4 class="my-0 display-4 text-light font-weight-normal mb-3"><span class="h3">#</span> {{allbugs.pending_request}} & {{pending_request_parsentage}} % <span class="h5">/mo</span></h4>
+             <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+          <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+          <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+          <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+        </svg>
+          </div>
+
+          <div class="card-body bg-white mt-0 shadow">
+            <ul class="list-unstyled mb-5 position-relative">
+              <li class="li_glid"><b>{{allbugs.pending_developers}} </b> Developers included</li>
+              <li class="li_glid"><b>{{pending_developers_parsentage}} % </b> Developers included %</li>
+              <li class="li_glid"><b>{{allbugs.pending_developers_days}} </b> Day's of Work</li>
+              <li class="li_glid"><b>{{pending_developers_days_parsentage}} % </b> Day's of Work %</li> 
+              <li class="li_glid"><b>{{allbugs.pending_support_developers}} </b> Developers support</li>
+              <li class="li_glid"><b>{{pending_support_developers_parsentage}} % </b> Developers support %</li>
+              <li class="li_glid"><b>{{allbugs.last_update_date}} </b> Last Updated</li>
+            </ul>
+            <a class="nav-link" routerLink="/bugs"><button type="button"  class="btn btn-lg btn-block  btn-custom ">More details</button> </a>
+          </div>
+        </div>
+               
+        
+  
+        
+        
+         
+        <div class="col-4 princing-item green">
+          <div class="pricing-divider ">
+              <h3 class="text-light">COMPLETED REQUEST & %</h3>
+              <h4 class="my-0 display-4 text-light font-weight-normal mb-3"><span class="h3">#</span> {{allbugs.complete_request}} & {{complete_request_parsentage}} %<span class="h5">/mo</span></h4>
+             <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+          <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+          <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+          <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+        </svg>
+          </div>
+
+          <div class="card-body bg-white mt-0 shadow">
+            <ul class="list-unstyled mb-5 position-relative">
+              <li class="li_glid"><b>{{allbugs.complete_developers}} </b> Developers included</li>
+              <li class="li_glid"><b>{{complete_developers_parsentage}} % </b> Developers included %</li>
+              <li class="li_glid"><b>{{allbugs.complete_developers_days}} </b> Day's of Work</li>
+              <li class="li_glid"><b>{{complete_developers_days_parsentage}} % </b> Day's of Work %</li> 
+              <li class="li_glid"><b>{{allbugs.complete_support_developers}} </b> Developers support</li>
+              <li class="li_glid"><b>{{complete_support_developers_parsentage}} % </b> Developers support %</li>
+              <li class="li_glid"><b>{{allbugs.last_update_date}} </b> Last Updated</li>
+            </ul>
+          <a class="nav-link" routerLink="/bugs"><button type="button"  class="btn btn-lg btn-block  btn-custom ">More details</button> </a>
+          </div>
+        </div>
+               
+         
+        
+        
+        
+        
+      </div>
+    </div>
+  </mat-card>
+  <mat-card class="example-card common_cardui">
+    <app-footer></app-footer>
+  </mat-card>
+</div>

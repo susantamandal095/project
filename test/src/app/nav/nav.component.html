@@ -1,0 +1,13 @@
+<app-side-menu></app-side-menu>
+<div class="common_div">
+  <div class="card card_view">
+    <div class="card-header">
+      Change Company Name
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Current Company Name is : <b> {{companyname}} </b></h5>
+      <input type="text" class="form-control mb-2" #comp>
+      <button class="btn btn-primary"(click)="noChange(comp)">Change</button>
+    </div>
+  </div>
+</div>

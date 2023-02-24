@@ -1,0 +1,49 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .card{
+    background-color: #29067c;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+  }
+  ::ng-deep.mat-tab-labels {
+    display: none !important;
+  }
+  .for-buttom{
+    margin: 35px 32px;
+  }
+  .for_best_product{
+    height: 400px;
+  }
+  .for_best_product_one{
+    height: 240px;
+  }  
+  .best_product_ove {
+    background-image: url("../../assets/cov7.jpg");
+    background-color: #cccccc;
+    height: 403px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .mat-card-actions, .mat-card-subtitle, .mat-card-content {
+    display: contents;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-family: auto;
+  }
+  @media only screen and (max-width: 600px) {
+  .covide_card{
+    overflow: auto;
+  }
+  .for_best_product{
+    height: auto !important;
+  }
+}

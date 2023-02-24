@@ -1,0 +1,64 @@
+<app-side-menu></app-side-menu>   
+    <div class="common_div">
+      <!-- sidebar end -->
+<mat-card class="card">
+  <mat-card-title align="center">
+    COVID-19 UPDATE IN INDIA:-
+  </mat-card-title>
+  </mat-card>
+  <br>
+  <div class="update_btn">
+  <button mat-flat-button color="primary"><a class="nav-link link_col" routerLink="/covid">For Covid Main Page</a></button>
+  </div>
+  <p class="for_para"><b>Total Records - {{total}}</b></p>
+  <div class="container-fluid">
+    <mat-card class="covide_card">
+    <mat-card> <img *ngIf="loading" class="for_loader" src="../../assets/2.gif" /> </mat-card>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+              <th>S no.</th>
+            <th>Country</th>
+            <th>Active</th>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+            <th>Lat</th>
+            <th>Lon</th>
+            <th>Date</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of new_array | paginate : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };let j=index">
+            <td>{{j+1}}</td>
+            <td>{{item.Country}}</td>
+            <td class="for_active">{{item.Active}}</td>
+            <td class="for_confirm">{{item.Confirmed}}</td>
+            <td class="for_dath">{{item.Deaths}}</td>
+            <td class="for_recover">{{item.Recovered}}</td>
+            <td>
+              {{item.Lat}}
+            </td>
+            <td>
+              {{item.Lon}}
+            </td>
+            <td>{{item.Date}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+        <pagination-controls responsive="true" previousLabel="Prev" nextLabel="Next"
+          (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+      </div>
+
+    </mat-card>
+  </div>
+  <app-footer></app-footer>
+  </div>
+

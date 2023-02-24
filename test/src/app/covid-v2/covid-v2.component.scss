@@ -1,0 +1,26 @@
+
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .card{
+    background-color: #29067c;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+  }
+  ::ng-deep.mat-tab-labels {
+    display: none !important;
+  }
+@media only screen and (max-width: 600px) {
+    .covide_card{
+      overflow: auto;
+    }
+    .for_best_product{
+      height: auto !important;
+    }
+  }

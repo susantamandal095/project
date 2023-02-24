@@ -1,0 +1,131 @@
+
+.example-header-image {
+    background-image: url('../../assets/sm.jpg');
+    background-size: cover;
+    height: 203px;
+    width: 142px;
+    margin: 24px 115px;
+  }
+  
+    /* toolbar */
+    .example-spacer {
+      flex: 1 1 auto;
+      
+      
+    }  
+  span{
+      padding-right: 1rem;
+       
+       text-emphasis-color: coral;
+  }
+    /* Form... */
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+  .ad {
+    background-color: #080baa;
+    border: none;
+    color: white;
+    padding: 8px 215px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  .ad:hover {opacity: 1}
+   
+  .card{
+    background-color: #29067c;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+  }
+  
+  .for_form{
+    margin: 3px 290px;
+  }
+  
+  
+  .for_address{
+    height: 500px;
+  }
+  .for_icon{
+    font-size: 50px;
+  }
+  .for_text{
+    font-size: 21px;
+      color: black;
+  }
+  ::ng-deep.mat-tab-labels {
+    display: none !important;
+  }
+  .for-buttom{
+    margin: 35px 32px;
+  }
+  .for_best_product{
+    height: 400px;
+  }
+  .for_best_product_one{
+    height: 240px;
+  }
+  
+  .for_cont_tab {
+    display: contents;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-family: auto;
+  }
+  .main_card{
+    z-index: 999999999;
+      top: 0px;
+      position: fixed;
+      /* left: 213px; */
+      background: beige;
+      width: 100%;    
+      height: 100%;
+  }
+  .caed_head{
+       background-color: cornflowerblue;
+      color: aliceblue;
+      margin-block-end: 20px;
+  }
+  .caed_head_one{
+    background-color: #e9da97;
+  }
+  .button_for_mob{
+    margin: 10px;
+  }
+  .card_para{
+      padding: 9px;
+      text-align: center;
+      font-size: 19px;
+  }
+  @media only screen and (max-width: 600px) {
+  .table_tr{
+    display: grid;
+  }
+  .ad{
+    padding: 8px 28px;
+  }
+  .for_form{
+    margin: 0px 0px;
+  }
+  .example-header-image{
+    margin: 24px 66px;
+  }
+  }

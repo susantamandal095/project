@@ -1,0 +1,247 @@
+  
+    <mat-tab-group #allTabs mat-align-tabs="start">
+      <mat-tab label="Personal Information">
+        <div class="main-div">
+          <mat-card class="for_add_card">
+            <div class="card">
+              <mat-card-title align="center"><span><button mat-fab color="warn"
+                    aria-label="Example icon button with a perm_identity icon">
+                    <mat-icon>perm_identity</mat-icon>
+                  </button></span><span>Personal Information </span> </mat-card-title>
+    
+            </div>
+            <form #myForm="ngForm" class="example-form">
+    
+    
+              <table class="example-full-width" cellspacing="0">
+                <tr class="mob_v">
+                  <td>
+                    <mat-form-field appearance="outline" class="example-full-width">
+    
+                      <mat-label><span class="icon">
+                          <mat-icon>account_circle</mat-icon>
+                        </span><span class="sp">Enter your First name *</span></mat-label>
+                      <input matInput [(ngModel)]="sinup_data.s_name" [formControl]="nameFormControl" placeholder="Ex. Susanta" required>
+                      <mat-error *ngIf="nameFormControl.hasError('required')">
+                        First name is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </td>
+    
+                  <td>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                      <mat-label><span class="icon">
+                          <mat-icon>account_circle</mat-icon>
+                        </span><span class="sp">Enter your Last Name *</span></mat-label>
+                      <input matInput [(ngModel)]="sinup_data.l_name" [formControl]="lastnameFormControl" placeholder="Ex. Mandal">
+                      <mat-error *ngIf="lastnameFormControl.hasError('required')">
+                        Last name is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+    
+              <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label><span class="icon">
+                    <mat-icon>email</mat-icon>
+                  </span><span class="sp">Enter your Email*</span></mat-label>
+                <input matInput [(ngModel)]="sinup_data.email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+    
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label><span class="icon">
+                    <mat-icon>call</mat-icon>
+                  </span><span class="sp">Enter your Mobile No*</span></mat-label>
+                <input type="tel" [(ngModel)]="sinup_data.mobile" pattern="^\d{10}$" matInput [formControl]="phoneFormControl" maxlength="10"
+                  placeholder="Ex. 9679337134">
+                <mat-error *ngIf="phoneFormControl.hasError('required')">
+                  Mobile No is <strong>required enter valid phone </strong>
+                </mat-error>
+              </mat-form-field>
+               <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label><span class="icon">
+                    <mat-icon>password</mat-icon>
+                  </span>
+                  <span class="sp">Your Password *</span>
+                </mat-label>
+                <input type="text" [(ngModel)]="sinup_data.password" (input)="checkpass($event.target.value);" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" matInput [formControl]="passwordFormControl"
+                  maxlength="12" placeholder="Ex. Susanta@123 max-12 charater">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Password is <strong>required enter valid Password </strong>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label><span class="icon">
+                    <mat-icon>password</mat-icon>
+                  </span>
+                  <span class="sp">Your Confirm Password *</span>
+                </mat-label>
+                <input type="text" [(ngModel)]="sinup_data.c_password" (input)="checkcpass($event.target.value);" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" matInput [formControl]="cnpasswordFormControl"
+                  maxlength="12" placeholder="Ex. Susanta@123 max-12 charater">
+                <mat-error *ngIf="cnpasswordFormControl.hasError('required')">
+                    Confirm Password is <strong>required enter valid Confirm Password </strong>
+                </mat-error>
+              </mat-form-field>
+              <p class="pass_msg">{{sinup_data.passmsg}}</p>
+              <div class="row">
+                <div class="col-sm-4">
+                  <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" class="profile"> <br/>
+                </div>
+                <div class="col-sm-8">
+                  <button mat-raised-button tabindex="-1" type="button" color="warn" class="ad_one">  <input  type='file' (change)="onSelectFile($event)" accept=".png, .jpg, .jpeg"></button>
+                </div>
+              </div>
+              <table class="example-full-width" cellspacing="0">
+                <tr class="mob_v">
+                  <td>
+                    <div>
+                      <!-- <button class="add" [disabled]="myForm.form.invalid" mat-raised-button color="primary">
+                        <mat-icon>add_circle_outline</mat-icon>Save
+                      </button> -->
+                      <button class="ad" mat-raised-button tabindex="-1" type="button" color="warn"
+                        (click)='moveToSelectedTab("Address")'>Next<mat-icon>keyboard_arrow_right</mat-icon></button>
+    
+                    </div>
+                  </td>
+    
+                </tr>
+              </table>
+            </form>
+          </mat-card>
+        </div>
+      </mat-tab>
+      <mat-tab label="Address">
+        <div class="main-div">
+          <mat-card class="for_add_card">
+            <div class="card">
+              <mat-card-title align="center"><span><button mat-fab color="warn"
+                    aria-label="Example icon button with a home icon">
+                    <mat-icon>home</mat-icon>
+                  </button></span><span> Address</span> </mat-card-title>
+            </div>
+            <form class="example-form">
+              <p>
+                <mat-form-field appearance="outline" class="example-full-width">
+                  <mat-label><span class="icon">
+                      <mat-icon>home</mat-icon>
+                    </span><span class="sp">Enter your Address one*</span></mat-label>
+                  <textarea matInput [formControl]="addoneFormControl" [(ngModel)]="sinup_data.add_one" placeholder="Ex. New Town"></textarea>
+                  <mat-error *ngIf="addoneFormControl.hasError('required')">
+                    Address 1 is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="example-full-width">
+                  <mat-label><span class="icon">
+                      <mat-icon>home</mat-icon>
+                    </span><span class="sp">Enter your Address two*</span></mat-label>
+                  <textarea matInput [formControl]="addtwoFormControl" [(ngModel)]="sinup_data.add_two" placeholder="Ex. 100 Main rode"></textarea>
+                  <mat-error *ngIf="addtwoFormControl.hasError('required')">
+                    Address 2 is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="example-full-width">
+                  <mat-label><span class="icon">
+                      <mat-icon>location_city</mat-icon>
+                    </span><span class="sp">Enter your City*</span></mat-label>
+                  <input matInput [formControl]="cityFormControl" [(ngModel)]="sinup_data.city" placeholder="Ex. Kolkata">
+                  <mat-error *ngIf="cityFormControl.hasError('required')">
+                    City is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </p>
+    
+              <table class="example-full-width" cellspacing="0">
+                <tr class="mob_v">
+                  <td>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                      <mat-label><span class="icon">
+                          <mat-icon>domain</mat-icon>
+                        </span><span class="sp">Enter your State*</span></mat-label>
+                      <input matInput [formControl]="stateFormControl" [(ngModel)]="sinup_data.state" placeholder="Ex. West Bengal">
+                      <mat-error *ngIf="stateFormControl.hasError('required')">
+                        State is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                      <mat-label><span class="icon">
+                          <mat-icon>add_location</mat-icon>
+                        </span><span class="sp">Enter your Postal Code*</span></mat-label>
+                      <input matInput [formControl]="pinFormControl" [(ngModel)]="sinup_data.pin" #postalCode maxlength="6" placeholder="Ex. 941065"
+                        value="940413">
+                      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                      <mat-error *ngIf="pinFormControl.hasError('required')">
+                        Pin is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+              <table class="example-full-width" cellspacing="0">
+                <tr class="mob_v">
+                  <td>
+                    <div>
+    
+                      <!-- <button class="ad" mat-raised-button color="primary">
+                        <mat-icon>add_circle_outline</mat-icon>Save
+                      </button> -->
+                      <button class="butt" mat-raised-button tabindex="-1" type="button" color="warn"
+                        (click)='moveToSelectedTab("Personal Information")'>
+                        <mat-icon>keyboard_arrow_left</mat-icon>Back
+                      </button>
+                      <button class="buttone" mat-raised-button tabindex="-1" type="button" color="warn"
+                        (click)='moveToSelectedTab("Done")'>Next<mat-icon>keyboard_arrow_right</mat-icon>
+                      </button>
+                    </div>
+                  </td>
+    
+                </tr>
+              </table>
+            </form>
+    
+          </mat-card>
+        </div>
+      </mat-tab>
+      <mat-tab label="Done">
+        <div class="main-div">
+          <mat-card>
+            <div class="card">
+              <mat-card-title align="center"><span><button mat-fab color="warn"
+                    aria-label="Example icon button with a cloud_upload icon">
+                    <mat-icon>label_important</mat-icon>
+                  </button></span><span>Done</span> </mat-card-title>
+            </div>
+            <table class="example-full-width" cellspacing="0">
+              <tr class="mob_v">
+                <td>
+                  <div>  
+                    <button class="nex" mat-raised-button tabindex="-1" type="button" color="warn"
+                      (click)='moveToSelectedTab("Address")'>
+                      <mat-icon>keyboard_arrow_left</mat-icon>Back
+                    </button>
+                    <!-- <button class="butt" mat-raised-button tabindex="-1" type="button" color="warn"
+                        (click)='reset();moveToSelectedTab("Personal Information")'>
+                        <mat-icon>keyboard_arrow_left</mat-icon>Reset
+                      </button> -->
+                    <button class="add" (click)="sinup()" mat-raised-button>Submit<mat-icon>label_important</mat-icon></button>
+                    <button (click)="login()" class="add cancile" mat-raised-button>cancel<mat-icon>label_important</mat-icon></button>
+                  </div>
+    
+                </td>
+    
+              </tr>
+            </table>
+    
+          </mat-card>
+        </div>
+    
+      </mat-tab>
+    </mat-tab-group>

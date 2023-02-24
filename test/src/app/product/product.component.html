@@ -1,0 +1,241 @@
+
+<app-side-menu></app-side-menu>
+<div class="common_div">
+  <!-- <mat-card class="example-card" *ngFor="let i of userdata">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-card-title>{{i.name}}</mat-card-title>
+      <p>
+      <b>product_size : </b>  {{i.product_size}}
+      </p>
+      <p>
+        <b>product_description : </b>  {{i.product_description}}
+      </p>
+      <p>
+        <b>product_qty : </b>  {{i.product_qty}}
+      </p>
+      <p>
+        <b>Address : </b>  {{i.address}}
+      </p>
+      <p>
+        <b>Last Update : </b> {{value}}
+      </p>
+    </mat-card-content>
+  </mat-card> -->
+  <mat-card class="example-card common_cardui">
+    <div class="row">
+      <div class="col-sm-5">
+        <p class="for_para"><b>Total Records : - {{total}}</b></p>
+      </div>
+      <div class="col-sm-6">
+        <button (click)="exportAsXLSX()" class="btn btn-info mb-4 mt-2">Download Excel</button> 
+      </div>
+      <div class="col-sm-1">
+      <span><button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="create()" matTooltip="Add new">
+        <mat-icon>add_circle</mat-icon>
+      </button></span>
+      </div>
+    </div>
+    <mat-card style="background-color: #a8b2c5;"> <img *ngIf="loading" class="for_loader" src="../../assets/2.gif" /> </mat-card>
+    <table class="table" style="background-color: aliceblue;">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Sl no</th>
+          <th scope="col">Id</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Product Brand Name</th>
+          <th scope="col">Product Description</th>
+          <th scope="col">Product Size</th>
+          <th scope="col">Product Qty</th>
+          <th scope="col">Product Quality</th>
+          <th scope="col">Product Base Price</th>
+          <th scope="col">Product Discount Price</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of profile | paginate : {itemsPerPage: tableSize,currentPage: page, totalItems: count};let p = index;">
+          <th scope="row">{{p+1}}</th>
+          <th>{{i._id}}</th>
+          <td>{{i.product_name}}</td>
+          <td>{{i.product_brand_name}}</td>
+          <td>{{i.product_description}}</td>
+          <td>{{i.product_size}}</td>
+          <td *ngIf="i.product_qty >= 1000" style="color: green;" >{{i.product_qty}}</td>
+          <td *ngIf="i.product_qty >=500 && i.product_qty < 1000" style="color: rgb(252, 138, 8);" >{{i.product_qty}}</td>
+          <td *ngIf="i.product_qty < 500" style="color: red;" >{{i.product_qty}}</td>
+          <td>{{i.product_quality}} </td>            
+          <td>{{i.product_base_price}}</td>  
+          <td>{{i.product_discount_price}}</td>
+          <td style="display: flex;"><button mat-button mat-raised-button color="primary" style="margin: 2px;" (click)="addupdate(i,'view')" matTooltip="Save"><mat-icon>open_in_new</mat-icon></button>
+            <button mat-button mat-raised-button color="accent" style="margin: 2px;" (click)="addupdate(i,'edit')" matTooltip="Update"><mat-icon>create</mat-icon></button>
+            <button mat-button mat-raised-button color="warn" style="margin: 2px;" (click)="remove(i._id)" matTooltip="Delete"> <mat-icon>delete</mat-icon></button></td>
+        </tr>
+      </tbody>
+      </table>
+  </mat-card>
+  <mat-card class="example-card common_cardui">
+    <div class="d-flex justify-content-center">
+      <pagination-controls responsive="true" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+    </mat-card>
+  <!-- <app-footer></app-footer> -->
+  <mat-card class="example-card main_card" *ngIf="forCreate || isUpdate||isView">
+  <mat-card class="example-card caed_head">
+  <p class="card_para">This is For {{title}}</p>
+  </mat-card>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+    
+          <mat-label><span class="icon">
+              <mat-icon>account_circle</mat-icon>
+              <span>{{ sinup_data.product_name }}</span>
+            </span><span class="sp">Enter your product name *</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.product_name"  placeholder="Ex. Susanta" required [disabled]="isView">
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            Product name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>account_circle</mat-icon>
+            </span><span class="sp">Enter your product brand name *</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.product_brand_name" placeholder="Ex. Mandal" required [disabled]="isView">
+          <mat-error *ngIf="lastnameFormControl.hasError('required')">
+            Product Brand Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <!-- <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>product_size</mat-icon>
+            </span><span class="sp">Enter your product size*</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.product_size"  placeholder="Ex. pat@example.com" required [disabled]="isView">
+          <mat-error *ngIf="product_sizeFormControl.hasError('product_size') && !product_sizeFormControl.hasError('required')">
+            Please enter a valid product_size address
+          </mat-error>
+          <mat-error *ngIf="product_sizeFormControl.hasError('required')">
+            product size is <strong>required</strong>
+          </mat-error>
+
+        </mat-form-field> -->
+        <div class="btn-group">
+             <label>Select a country: </label>
+             <select (change)="onChange()" [(ngModel)]="sinup_data.product_size" >
+                <option *ngFor="let country of productsize" value={{country.size}} > {{country.size}} </option>
+              </select>
+         </div>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>call</mat-icon>
+            </span><span class="sp">Enter Your Product Description*</span></mat-label>
+          <input type="text" [(ngModel)]="sinup_data.product_description" matInput  maxlength="1000"
+            placeholder="Ex. Product Description any" required [disabled]="isView">
+          <mat-error *ngIf="phoneFormControl.hasError('required')">
+            pProduct Description is <strong>required enter valid phone </strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>product_qty</mat-icon>
+            </span>
+            <span class="sp">Your product qty *</span>
+          </mat-label>
+          <input type="text" [(ngModel)]="sinup_data.product_qty" matInput 
+            maxlength="12" placeholder="Ex. Susanta@123 max-12 charater" required [disabled]="isView">
+          <mat-error *ngIf="product_qtyFormControl.hasError('required')">
+              product qty is <strong>required enter valid product qty </strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>home</mat-icon>
+            </span><span class="sp">Enter your product quality*</span></mat-label>
+          <textarea matInput [(ngModel)]="sinup_data.product_quality" placeholder="Ex. New Town" required [disabled]="isView"></textarea>
+          <mat-error *ngIf="addoneFormControl.hasError('required')">
+            product quality is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>home</mat-icon>
+            </span><span class="sp">Enter your product base price*</span></mat-label>
+          <textarea matInput  [(ngModel)]="sinup_data.product_base_price" placeholder="Ex. 100 Main rode" required [disabled]="isView"></textarea>
+          <mat-error *ngIf="addtwoFormControl.hasError('required')">
+            product base price is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>location_product_discount_price</mat-icon>
+            </span><span class="sp">Enter your product discount price*</span></mat-label>
+          <input matInput  [(ngModel)]="sinup_data.product_discount_price" placeholder="Ex. Kolkata" required [disabled]="isView">
+          <mat-error *ngIf="product_discount_priceFormControl.hasError('required')">
+            product discount price is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <!-- <div class="row"> -->
+      <!-- <div class="col-sm-3">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label><span class="icon">
+              <mat-icon>domain</mat-icon>
+            </span><span class="sp">Enter your State*</span></mat-label>
+          <input matInput [(ngModel)]="sinup_data.state" placeholder="Ex. West Bengal" required [disabled]="isView">
+          <mat-error *ngIf="stateFormControl.hasError('required')">
+            State is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div> -->
+        <!-- <div class="col-sm-3">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label><span class="icon">
+                <mat-icon>add_location</mat-icon>
+              </span><span class="sp">Enter your Postal Code*</span></mat-label>
+            <input matInput [(ngModel)]="sinup_data.pin" #postalCode maxlength="6" placeholder="Ex. 941065"
+              value="940413" required [disabled]="isView">
+            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            <mat-error *ngIf="pinFormControl.hasError('required')">
+              Pin is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div> -->
+        <!-- <div class="col-sm-6">
+         
+        </div> -->
+        <!-- </div> -->
+        <mat-card class="example-card caed_head_one">
+          <button mat-button mat-raised-button color="primary" style="margin: 5px;" (click)="update(sinup_data.id)" [hidden]="isView || forCreate"><mat-icon>send</mat-icon> Update</button>
+          <button mat-button mat-raised-button color="accent" (click)="backFor()"> <mat-icon>skip_previous</mat-icon> Back</button>
+          <button mat-button mat-raised-button color="primary" style="margin: 5px;" (click)="save()" [hidden]="isView || isUpdate"><mat-icon>send</mat-icon> Save</button>
+          </mat-card>
+        
+  </mat-card>
+  <mat-card class="example-card common_cardui">
+    <app-footer></app-footer>
+  </mat-card>
+</div>

@@ -1,0 +1,401 @@
+<app-side-menu></app-side-menu>
+<div class="common_div">
+  <!------------------------- Why you choses us?------------------------------>
+  <mat-carousel timings="250ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="auto" proportion="30"
+  slides="3" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true" [useMouseWheel]="false"
+  orientation="ltr">
+  <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
+    overlayColor="#00000040" [hideOverlay]="false"></mat-carousel-slide>
+</mat-carousel>
+
+<div>
+  <marquee behavior="scroll" direction="left">
+    <h2><b>To stop spread of corona virus stay inside home #stay safe!</b></h2>
+  </marquee>
+
+</div>
+  <br>
+  <mat-card class="card">
+    <mat-card-title align="center">
+      COVID-19 GUIDELINES :-
+    </mat-card-title>
+  </mat-card>
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-card class="for_best_product_one my_gride">
+          <a herf="#">
+            <img class="for_best_product_one image" mat-card-image src="../../assets/10.jpg">
+          </a>
+        </mat-card>
+      </div>
+      <div class="col-sm-3 for_all_card">
+        <mat-card class="for_best_product_one best_product_ove for_mobile_card">
+          <mat-card-title>
+            What should I do if I have symptoms of COVID-19?
+          </mat-card-title>
+          <!-- <mat-card-subtitle>
+            This is our Web Design Services
+          </mat-card-subtitle> -->
+          <mat-card-content class="for_cont_tab">
+            Stay home and self-isolate even if you have minor symptoms such as cough, headache, mild fever, until you
+            recover. Call your health care provider or hotline for advice. Have someone bring you supplies. If you need
+            to leave your house or have someone near you, wear a medical mask to avoid infecting others.
+          </mat-card-content>
+          <!-- <div>
+
+        <button mat-raised-button color="accent">Read More</button>
+      </div> -->
+        </mat-card>
+      </div>
+      <div class="col-sm-3 for_all_card">
+        <mat-card class="for_best_product_one my_gride">
+          <a herf="#">
+            <img class="for_best_product_one image" mat-card-image src="../../assets/cov8.jpg">
+          </a>
+        </mat-card>
+      </div>
+      <div class="col-sm-3 for_all_card">
+        <mat-card class="for_best_product_one best_product_ove for_mobile_card">
+          <mat-card-title>
+            How can I help a family member with COVID-19 at home?
+          </mat-card-title>
+          <!-- <mat-card-subtitle>
+            This is our Web Design Services
+          </mat-card-subtitle> -->
+          <mat-card-content class="for_cont_tab">
+            The ill person should stay in a separate room. If this is not possible, then keep at least a 1-metre
+            distance from them. The sick person and anyone else in the same room should wear a medical mask.
+          </mat-card-content>
+          <!-- <div>
+
+      <button mat-raised-button color="accent">Read More</button>
+    </div> -->
+        </mat-card>
+
+
+
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!------------------------- FEARURED  PRODUCT----------------------------->
+  <br>
+  <mat-card class="card">
+    <mat-card-title align="center">
+      GUIDELINES :-
+    </mat-card-title>
+  </mat-card>
+  <br>
+
+
+
+  <br>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 for_all_card">
+        <mat-card class="best_product my_gride">
+          <a herf="#">
+            <img class="best_product image" mat-card-image src="../../assets/1.gif">
+          </a>
+        </mat-card>
+      </div>
+      <div class="col-sm-6">
+        <mat-card class="best_product my_gride">
+          <a herf="#">
+            <img class="best_product image" mat-card-image src="../../assets/6.gif">
+          </a>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <!------------------------- SERVICE------------------------------>
+
+  <mat-card class="card">
+    <mat-card-title align="center">
+      COVID-19 :-
+    </mat-card-title>
+  </mat-card>
+  <br>
+
+  <mat-tab-group>
+    <mat-tab label="product 1">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 for_all_card">
+            <mat-card class="card_view for_best_product best_product for_mobile_card">
+              <mat-card-title>
+                Can the coronavirus disease spread through feces?
+              </mat-card-title>
+              <!-- <mat-card-subtitle>
+                This is our Web Design Services
+              </mat-card-subtitle> -->
+              <mat-card-content class="for_cont_tab">
+                The risk of catching the COVID-19 virus from the faeces of an infected person appears to be low.
+                There is some evidence that the COVID-19 virus may lead to intestinal infection and be present in
+                faeces. Approximately 2−10% of cases of confirmed COVID-19 disease presented with diarrhoea (2−4), and
+                two studies detected COVID-19 viral RNA fragments in the faecal matter of COVID-19 patients (5,6).
+                However, to date only one study has cultured the COVID-19 virus from a single stool specimen (7). There
+                have been no reports of faecal−oral transmission of the COVID-19 virus.
+                <br>
+                <h1><b>Can COVID-19 spread in hot and humid climates?</b></h1><br>
+                From the evidence so far, the COVID-19 virus can be transmitted in ALL AREAS, including areas with hot and humid weather. Regardless of climate, adopt protective measures if you live in, or travel to an area reporting COVID-19.
+              </mat-card-content>
+              <div>
+                <button onclick="alert('Not Updated Yet.Update Soon !!')" mat-raised-button color="accent"
+                  matTooltip="Not Updated Yet.Update Soon !!"
+                  aria-label="Button that displays a tooltip when focused or hovered over">
+                  Read More
+                </button>
+              </div>
+            </mat-card>
+          </div>
+          <div class="col-sm-6">
+            <mat-card class="for_best_product">
+
+              <img class="for_best_product" mat-card-image src="../../assets/11.jpg" alt="Photo of a Shiba Inu">
+
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+
+      <div align="center">
+        <button class="butt for-buttom" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 4")'>
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="butt" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 2")'>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+
+      </div>
+    </mat-tab>
+    <mat-tab label="product 2">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 for_all_card">
+            <mat-card class="card_view for_best_product best_product for_mobile_card">
+              <mat-card-title>
+                How long should I self-quarantine if I have been exposed to COVID-19?
+              </mat-card-title>
+              <!-- <mat-card-subtitle>
+                This is our Web Design Services
+              </mat-card-subtitle> -->
+              <mat-card-content class="for_cont_tab">
+                Those who may have been exposed to someone with COVID-19 and those who have recently travelled to a
+                country or region with the widespread transmission have been advised to self-quarantine for 14 days from
+                the time of last possible exposure.<br><br>
+
+               <h1><b> What are signs and symptoms of the coronavirus disease? </b></h1><br>
+                Signs and symptoms include respiratory symptoms and include fever, cough and shortness of breath. In
+                more severe cases, infection can cause pneumonia, severe acute respiratory syndrome and sometimes death.
+
+                Standard recommendations to prevent the spread of COVID-19 include frequent cleaning of hands using
+                alcohol-based hand rub or soap and water; covering the nose and mouth with a flexed elbow or disposable
+                tissue when coughing and sneezing; and avoiding close contact with anyone that has a fever and cough.
+              </mat-card-content>
+              <div>
+
+                <button onclick="alert('Not Updated Yet.Update Soon !!')" mat-raised-button color="accent"
+                  matTooltip="Not Updated Yet.Update Soon !!"
+                  aria-label="Button that displays a tooltip when focused or hovered over">
+                  Read More
+                </button>
+              </div>
+            </mat-card>
+          </div>
+          <div class="col-sm-6">
+            <mat-card class="for_best_product">
+
+              <img class="for_best_product" mat-card-image src="../../assets/12.jpg" alt="Photo of a Shiba Inu">
+
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <div align="center">
+        <button class="butt for-buttom" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 1")'>
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="butt" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 3")'>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+
+      </div>
+    </mat-tab>
+    <mat-tab label="product 3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 for_all_card">
+            <mat-card class="card_view for_best_product best_product for_mobile_card">
+              <mat-card-title>
+                In what conditions does COVID-19 survive the longest?
+              </mat-card-title>
+              <!-- <mat-card-subtitle>
+                This is our Web Design Services
+              </mat-card-subtitle> -->
+              <mat-card-content class="for_cont_tab">
+                Coronaviruses die very quickly when exposed to the UV light in sunlight. Like other enveloped viruses,
+                SARS-CoV-2 survives longest when the temperature is at room temperature or lower, and when the relative
+                humidity is low.The risk of catching the COVID-19 virus from the faeces of an infected person appears to be low.<br>
+
+               <h1><b> Can the coronavirus disease spread through feces? </b></h1><br>
+                There is some evidence that the COVID-19 virus may lead to intestinal infection and be present in
+                faeces. Approximately 2−10% of cases of confirmed COVID-19 disease presented with diarrhoea (2−4), and
+                two studies detected COVID-19 viral RNA fragments in the faecal matter of COVID-19 patients (5,6).
+
+                However, to date only one study has cultured the COVID-19 virus from a single stool specimen (7). There
+                have been no reports of faecal−oral transmission of the COVID-19 virus.
+
+
+              </mat-card-content>
+              <div>
+
+                <button onclick="alert('Not Updated Yet.Update Soon !!')" mat-raised-button color="accent"
+                  matTooltip="Not Updated Yet.Update Soon !!"
+                  aria-label="Button that displays a tooltip when focused or hovered over">
+                  Read More
+                </button>
+              </div>
+            </mat-card>
+          </div>
+          <div class="col-sm-6">
+            <mat-card class="for_best_product">
+
+              <img class="for_best_product" mat-card-image src="../../assets/cov10.png" alt="Photo of a Shiba Inu">
+
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div align="center">
+        <button class="butt for-buttom" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 3")'>
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="butt" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 4")'>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+
+      </div>
+
+    </mat-tab>
+    <mat-tab label="product 4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 for_all_card">
+            <mat-card class="card_view for_best_product best_product for_mobile_card">
+              <mat-card-title>
+                How can I reduce stress down during the coronavirus pandemic?
+              </mat-card-title>
+              <!-- <mat-card-subtitle>
+                This is our Web Design Services
+              </mat-card-subtitle> -->
+              <mat-card-content class="for_cont_tab">
+                Take up a relaxation practice. When stressors throw your nervous system out of balance, relaxation
+                techniques such as deep breathing, meditation, and yoga can bring you back into a state of equilibrium.
+                Regular practice delivers the greatest benefits, so see if you can set aside even a little time every
+                day.<br> <br>
+
+                <h1><b>Is COVID-19 more dangerous than influenza?</b></h1> <br>
+                An analysis of those IFR rates indicates that COVID-19 is hazardous not only for the elderly but also
+                for middle-aged adults, for whom a fatal COVID-19 infection is two orders of magnitude more likely than
+                the annualized risk of a fatal automobile accident and far more dangerous than seasonal influenza.
+              </mat-card-content>
+              <div>
+
+                <button onclick="alert('Not Updated Yet.Update Soon !!')" mat-raised-button color="accent"
+                  matTooltip="Not Updated Yet.Update Soon !!"
+                  aria-label="Button that displays a tooltip when focused or hovered over">
+                  Read More
+                </button>
+              </div>
+            </mat-card>
+          </div>
+          <div class="col-sm-6">
+            <mat-card class="for_best_product">
+
+              <img class="for_best_product" mat-card-image src="../../assets/cov11.png" alt="Photo of a Shiba Inu">
+
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div align="center">
+        <button class="butt for-buttom" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 3")'>
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button class="butt" mat-raised-button tabindex="-1" type="button" color="warn"
+          (click)='moveToSelectedTab("product 1")'>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+
+
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <!------------------------- TECHNOLOGY------------------------------>
+  <br>
+  <mat-card class="card">
+    <mat-card-title align="center">
+      IMAGES GALLERY :-
+    </mat-card-title>
+  </mat-card>
+  <br>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-card class="for_best_product_one my_gride">
+          <a herf="#">
+            <img class="for_best_product_one image" mat-card-image src="../../assets/1.jpg">
+          </a>
+        </mat-card>
+      </div>
+      <div class="col-sm-3 for_all_card">
+        <mat-card class="for_best_product_one my_gride">
+          <a herf="#">
+            <img class="for_best_product_one image" mat-card-image src="../../assets/2.jpg">
+          </a>
+        </mat-card>
+      </div>
+      <div class="col-sm-3 for_all_card">
+        <mat-card class="for_best_product_one my_gride">
+          <a herf="#">
+            <img class="for_best_product_one image" mat-card-image src="../../assets/3.jpg">
+          </a>
+        </mat-card>
+      </div>
+      <div class="col-sm-3 for_all_card">
+        <mat-card class="for_best_product_one my_gride">
+          <a herf="#">
+            <img class="for_best_product_one image" mat-card-image src="../../assets/4.jpg">
+          </a>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <app-footer></app-footer>
+</div>
+

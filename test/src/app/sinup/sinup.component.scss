@@ -1,0 +1,252 @@
+/* toolbar*/
+
+.example-spacer {
+    flex: 1 1 auto;
+    
+    
+  }  
+span{
+    padding-right: 1rem;
+     
+     text-emphasis-color: coral;
+}
+  /* Form... */
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin:10px;
+    
+  
+  }
+  
+  .example-full-width {
+    width: 100%;
+    
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+  .main-div{
+    height: 49vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: #4e7baf;
+    background-image: url("../../assets/reg1.jpg");
+    background-color: #cccccc;
+  }
+.card{
+  background-color: #29067c;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+}
+.butt {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 8px 91px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.butt:hover {opacity: 1}
+.buttone {
+  background-color: #080baa;
+  border: none;
+  color: white;
+  padding: 8px 91px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.buttone:hover {opacity: 1}
+.add {
+  background-color: #080baa;
+  border: none;
+  color: white;
+  padding: 8px 95px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 0px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.add:hover {opacity: 1}
+.ad {
+  background-color: #080baa;
+  border: none;
+  color: white;
+  padding: 8px 215px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.ad:hover {opacity: 1}
+
+.nex {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 8px 91px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 1px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.nex:hover {opacity: 1}
+.file{
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 8px 50px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.file:hover {opacity: 1}
+
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btnn {
+  border: 2px solid white;
+  color: white;
+  background-color: rgb(4, 31, 39);
+  padding: 8px 233px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.iconsize{
+  font-size: 50px;
+}
+.icon {
+  display: inline-block !important;
+  font-size: 26px;
+  margin-right: 0px;
+}
+.sp{
+  display: inline-block !important;
+  font-size: 15px;
+  line-height: 2 !important;
+  margin-left: 0px !important;
+  position: relative;
+  top: -10px;
+  left: 3px;
+}
+.pass_msg{
+  color: red;
+}
+::ng-deep .mat-tab-label {
+width: 100% !important;
+}
+.for_add_card{
+  background-image: url("../../assets/reg3.jpg");
+  background-color: #cccccc;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: 'Numans', sans-serif;
+  }
+  .cancile{
+    background-color: #d61212 !important;
+  }
+  .profile{
+    width: 100%;
+    height: 100%;
+    border-radius: 136px;
+    // padding: 0px 8px 6px 0px;
+  }
+  .ad_one{
+    background-color: #080baa;
+    border: none;
+    color: white;
+    padding: 7px 27px;
+    text-align: center;
+    font-size: 16px;
+    margin: 54px 40px 0px 47px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 25px;
+    width: 250px;
+  }
+@media only screen and (max-width: 600px) {
+.for_add_card{
+width: 345px;
+}
+.mob_v{
+  display: grid !important;
+}
+.add{
+  padding: 0px 15px;
+}
+.nex{
+  padding: 0px 15px;
+}
+.ad{
+  padding: 0px 15px;
+}
+.butt{
+  padding: 0px 15px;
+}
+.buttone{
+  padding: 0px 15px;
+}
+}

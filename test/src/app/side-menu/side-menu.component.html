@@ -1,0 +1,173 @@
+<div class="dynamic_header">
+<div class="page-header" id="header">
+  <nav id="mainNavbar" class="navbar navbar-expand-sm navbar-light navbar_color">
+    <div class="container-fluid">
+      <span class="home_btn_view"><i class="fa fa-bars bar_mobile mobile_view_bar"  (click)="openNav();" aria-hidden="true"></i></span>  
+      <span><button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="openNav();" *ngIf="isOpened">
+        <mat-icon>home</mat-icon>
+      </button></span>
+      <span><button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="closeNav();"*ngIf="isclosed">
+        <mat-icon>clear</mat-icon>
+      </button></span>
+     <a class="nav-link" routerLink="/home"><span class="nav_heading">Welcome to {{companyname}}</span></a>
+      <button class="navbar-toggler bar_icon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="collapsed = !this.collapsed">
+        <span class="navbar-toggler-icon bar_span"></span>
+      </button>
+      <div id="navbarSupportedContent" [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }">
+        <!-- right nav menus -->
+        <ul class="navbar-nav ml-auto">
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="/home"><button mat-flat-button color="primary">Home</button></a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="/admin"><button mat-flat-button>Admin Info</button></a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="/chart"><button mat-flat-button>Employee Info</button></a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="/bugs"><button mat-flat-button>Bugs Info</button></a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="/companyname"><button mat-flat-button>Company Name</button></a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link"><button mat-flat-button (click)="logout()">Logout</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<nav class="side-menu" id="mySidenav" (mouseover)="openNav()" (mouseleave)="closeNav()">
+<!-- <nav class="side-menu" id="mySidenav">  -->
+  <ul class="menu-ul">
+    <li>
+      <a class="nav-link" routerLink="/home">
+        <i class="fa fa-home menu-img" aria-hidden="true"></i>
+        <span class="nav-text">
+         Home Page
+        </span>
+        <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+      </a>
+    </li>
+    <li>
+        <a class="nav-link" routerLink="/companyname">
+           <i class="fa fa-server menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Company Name
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/admin">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-user-circle menu-img" aria-hidden="true"></i>
+
+          <span class="nav-text">
+            Admin Info
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/chart">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-user-secret menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Employee Info
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/bugs">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-bug menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Bugs Info
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/product">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-server menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Product Info
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/covidpage">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-h-square menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Covid Home
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/covid">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <mat-icon class="menu-img"> bar_chart</mat-icon>
+          <span class="nav-text">
+            Covid-19 Update
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/covid-v2">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <mat-icon class="menu-img"> bar_chart</mat-icon>
+          <span class="nav-text">
+            Update In India
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="https://selfregistration.cowin.gov.in/">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-heartbeat menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Co-WIN Application
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019?gclid=CjwKCAjwz_WGBhA1EiwAUAxIca3h7duwYG27nBZEuUQ7QL4AeTIat9LOrtycFVrTJYdZrCGwCKzJOBoCW4QQAvD_BwE">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-medkit menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Visit WHO
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="https://www.mygov.in/covid-19">
+           <!-- <i class="fa fa-server menu-img" aria-hidden="true"></i> -->
+           <i class="fa fa-stethoscope menu-img" aria-hidden="true"></i>
+          <span class="nav-text">
+            Help Line & More
+          </span>
+          <!-- <i class="fa {{'fa-angle-right'}} arrow-icon"></i> -->
+        </a>
+      </li>
+      
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </ul>
+</nav>
+</div>
